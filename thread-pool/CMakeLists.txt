@@ -1,8 +1,11 @@
 project(my-own-thread-pool)
 
-add_library(${PROJECT_NAME} "")
+add_library(${PROJECT_NAME} INTERFACE)
 
-file(GLOB_RECURSE "src" CONFIGURE_DEPENDS "*.cpp" "*.h" "*.hpp")
+target_include_directories(${PROJECT_NAME} INTERFACE ${CMAKE_CURRENT_SOURCE_DIR}/include)
 
-target_link_libraries(${PROJECT_NAME} PRIVATE Logger)
-target_sources(${PROJECT_NAME} PRIVATE ${src})
+target_link_libraries(${PROJECT_NAME} INTERFACE Logger)
+
+file(GLOB_RECURSE srcs CONFIGURE_DEPENDS "*.hpp")
+
+target_sources(${PROJECT_NAME} PRIVATE ${srcs})

@@ -21,3 +21,4 @@ if (MINGW)
 endif ()
 
 add_subdirectory(thread-pool)
+add_subdirectory(sample)
