@@ -1,7 +1,8 @@
-#include "../memory-pool/include/memory-pool/memorypoolconstant.hpp"
-#include "logger/logger.h"
+#include "memory-pool/objectpool.hpp"
 
 #include <iostream>
+#include <memory-pool/memorypoolconstant.hpp>
+#include <logger/logger.h>
 #include <thread-pool/threadpool.hpp>
 
 void thread_test_first()
@@ -34,5 +35,17 @@ int main()
 	int* p_int = (int*)p;
 	*p_int = 1;
 	LOG_DEBUG("p_int: ", *(int*)p);
+
+	struct ObjectTest
+	{
+		int a = 1;
+		int b = 2;
+	};
+
+	LOG_DEBUG("==================== 对象池 - 不自动扩容·、、 ===================");
+	ObjectPool<ObjectTest> objectPool(10);
+	auto p_object = objectPool.create();
+	LOG_DEBUG("p_object: ", p_object->a, " ", p_object->b);
+
 	return 0;
 }
