@@ -1,8 +1,6 @@
-project(my-own-thread-pool)
+project(my-own-memory-pool)
 
-add_library(${PROJECT_NAME} INTERFACE
-        ../memory-pool/include/memory-pool/memorypoolconstant.hpp
-        ../memory-pool/include/memory-pool/objectpool.hpp)
+add_library(${PROJECT_NAME} INTERFACE)
 
 target_include_directories(${PROJECT_NAME} INTERFACE ${CMAKE_CURRENT_SOURCE_DIR}/include)
 
