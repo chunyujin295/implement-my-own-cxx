@@ -42,7 +42,7 @@ int main()
 		int b = 2;
 	};
 
-	LOG_DEBUG("==================== 对象池 - 不自动扩容·、、 ===================");
+	LOG_DEBUG("==================== 对象池 - 不自动扩容 ===================");
 	ObjectPool<ObjectTest> objectPool(10);
 	auto p_object = objectPool.create();
 	LOG_DEBUG("p_object: ", p_object->a, " ", p_object->b);
