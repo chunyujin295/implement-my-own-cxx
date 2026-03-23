@@ -1,9 +1,11 @@
-#include "memory-pool/objectpool.hpp"
-
 #include <iostream>
-#include <memory-pool/memorypoolconstant.hpp>
+
 #include <logger/logger.h>
+
+#include <memory-pool/objectpool.hpp>
+#include <memory-pool/memorypoolconstant.hpp>
 #include <thread-pool/threadpool.hpp>
+#include <endian-test/endiantest.hpp>
 
 void thread_test_first()
 {
@@ -46,6 +48,13 @@ int main()
 	ObjectPool<ObjectTest> objectPool(10);
 	auto p_object = objectPool.create();
 	LOG_DEBUG("p_object: ", p_object->a, " ", p_object->b);
+
+
+	LOG_DEBUG("==================== 杂七杂八的测试 ===================");
+	LOG_DEBUG(sizeof(int));
+
+	EndianTest::isLittleEndian();
+
 
 	return 0;
 }

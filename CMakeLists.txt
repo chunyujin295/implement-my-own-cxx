@@ -25,4 +25,5 @@ endif ()
 
 add_subdirectory(thread-pool)
 add_subdirectory(memory-pool)
+add_subdirectory(endian-test)
 add_subdirectory(sample)
