@@ -1,0 +1,27 @@
+{
+  "clangd.path": "D:/SoftWare/VS/vs2022/VC/Tools/Llvm/x64/bin/clangd.exe",
+  "clangd.arguments": [
+    "--background-index",
+    "--all-scopes-completion",
+    "--completion-style=detailed",
+    "--compile-commands-dir=${workspaceFolder}/build/mingw/debug",
+    "--query-driver=D:/SoftWare/CLion 2026.2.1/bin/mingw/bin/*"
+  ],
+  "clangd.fallbackFlags": ["-std=c++17"],
+  "clang-format.executable.windows": "D:/SoftWare/VS/vs2022/VC/Tools/Llvm/x64/bin/clang-format.exe",
+  "[cpp]": {
+    "editor.defaultFormatter": "xaver.clang-format"
+  },
+  "[c]": {
+    "editor.defaultFormatter": "xaver.clang-format"
+  },
+  "cmake.sourceDirectory": "${workspaceFolder}",
+  "cmake.buildDirectory": "${workspaceFolder}/build/mingw/debug",
+  "cmake.generator": "Ninja",
+  "cmake.configureOnOpen": false,
+  "cmake.configureSettings": {
+    "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+    "CMAKE_C_COMPILER": "D:/SoftWare/CLion 2026.2.1/bin/mingw/bin/gcc.exe",
+    "CMAKE_CXX_COMPILER": "D:/SoftWare/CLion 2026.2.1/bin/mingw/bin/c++.exe"
+  }
+}
